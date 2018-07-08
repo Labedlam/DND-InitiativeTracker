@@ -1,0 +1,105 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to Glitch!</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    
+    <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/vue-form-wizard/dist/vue-form-wizard.min.css">
+
+    <!-- import the webpage's client-side javascript file -->
+  
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--     <script src="https://requirejs.org/docs/release/2.2.0/minified/require.js"></script>
+     -->
+    <script src="/client.js" defer></script>
+    <script src="https://unpkg.com/vue-form-wizard/dist/vue-form-wizard.js"></script>
+
+  </head>
+  <body>
+    <header>
+      <h1>
+        Initiative Tracker
+      </h1>
+    </header>
+
+    <main id="app">
+    <div class="beggining" v-if="!currentRound">
+        <button type="button" v-on:click="startRound">
+        Begin
+      </button>
+    </div>
+      
+    <div v-if="currentRound">
+      <div>
+<!--       <h2 v-if="currentRound.Name"> {{}} </h2> -->
+      <form-wizard shape="circle" color="#3498db" subtitle="It has begun">
+         <h2 slot="title">{{currentRound.Name}}</h2>
+        <h4 slot="subtitle">It has </h4>
+        <tab-content title="Create Round">
+          <input v-model="currentRound.Name" name="roundName" type="text" maxlength="100" placeholder="Enter Name of Round" aria-labelledby="submit-name">
+          <button type="button" class="wizard-btn">
+            Add Monsters
+          </button>
+          <button type="button" class="wizard-btn">
+            Add Players
+          </button>
+        </tab-content>
+        <tab-content title="Gather Initiative">
+           Gather Initiative
+         </tab-content>
+         <tab-content title="Battle">
+           Battle
+         </tab-content>
+      </form-wizard>
+      </div>
+
+<sweet-modal title="Alert" ref="modal">
+	This is an alert.
+	<template slot="box-action">
+		<a href="#">Action 1</a> &nbsp;
+		<a href="#">Action 2</a>
+	</template>
+</sweet-modal>
+      
+      
+      
+      
+    
+      <section class="dreams">
+        <ul id="dreams"></ul>
+      </section>
+      
+    </div>
+   
+      
+      
+      
+    </main>
+
+    <footer>
+      Made with <a href="https://glitch.com">Glitch</a>!
+    </footer>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+
+  </body>
+</html>
