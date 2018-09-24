@@ -16,12 +16,15 @@
     "@fortawesome/free-solid-svg-icons": "^5.2.0",
     "@fortawesome/vue-fontawesome": "^0.1.1",
     "lodash": "^4.17.10",
+    "express": "^4.16.3",
+    "serve-static": "^1.13.2",
     "sweet-modal-vue": "^2.0.0",
     "vue": "^2.5.16",
     "vue-form-wizard": "^0.8.4",
     "vue-router": "^3.0.1",
     "vue-web-storage": "^2.1.0",
     "vuex": "^3.0.1"
+   
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-rc.4",
