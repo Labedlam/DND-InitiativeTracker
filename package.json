@@ -10,8 +10,15 @@
     "test:e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.2",
+    "@fortawesome/free-solid-svg-icons": "^5.2.0",
+    "@fortawesome/vue-fontawesome": "^0.1.1",
+    "lodash": "^4.17.10",
+    "sweet-modal-vue": "^2.0.0",
     "vue": "^2.5.16",
+    "vue-form-wizard": "^0.8.4",
     "vue-router": "^3.0.1",
+    "vue-web-storage": "^2.1.0",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

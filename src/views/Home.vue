@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img src="../assets/dndDice.png">
+    <HelloWorld msg="Initiative Tracker"/>
   </div>
 </template>
 
@@ -13,6 +13,20 @@ export default {
   name: 'home',
   components: {
     HelloWorld,
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      // access to component instance via `vm`
+      console.log("to", to)
+      vm.players = vm.$storage.get('_heros');
+      if(vm.players){
+        vm.$store.commit('setPlayers',vm.players);
+        console.log("whats next",next())
+        next()
+      }else{
+        next('heros')
+      }
+    })
   },
 };
 </script>
